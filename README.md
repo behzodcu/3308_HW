@@ -1,1 +1,1 @@
-# 3308_HW
+The first homework assignment for 3308
