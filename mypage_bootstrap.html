@@ -62,26 +62,29 @@
             </div>
             <br>
             <div class="card-group">
-                <div class="card">
+                <div class="card text-center" id ="interest1">
                   <img width = "200px" height = "200px" class="card-img-top" src="https://image.freepik.com/free-photo/digital-cyberspace-particles-background_24070-645.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Coding</h5>
-                    <p class="card-text">Coding is my form of expression.</p>
+                  <br>
+                  <div style = "margin: 0 auto;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="addCard('interest1')">+</button>
                   </div>
+                  <br>
                 </div>
-                <div class="card">
+                <div class="card text-center" id ="interest2">
                   <img width = "200px" height = "200px" class="card-img-top" src="https://i.pinimg.com/originals/0d/0a/0e/0d0a0e0c3ca120e94ae4a99c92a2853f.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Motorcycles</h5>
-                    <p class="card-text">Motorcycles are really fun!</p>
+                  <br>
+                  <div style = "margin: 0 auto;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="addCard('interest2')" >+</button>
                   </div>
+                  <br>
                 </div>
-                <div class="card">
+                <div class="card text-center" id ="interest3">
                   <img class="card-img-top" width = "200px" height = "200px" src="https://cdn.hipwallpaper.com/i/96/92/6Zf0lM.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Movies</h5>
-                    <p class="card-text">Movies are how I tend to relax.</p>
+                  <br>
+                  <div style = "margin: 0 auto;">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="addCard('interest3')" >+</button>
                   </div>
+                  <br>
                 </div>
               </div>
         </div>
@@ -92,4 +95,21 @@
             </a>
         </footer>
     </body>
+        <script>
+            newID = 0;
+            function deleteCard(cardID){
+                document.getElementById(cardID).remove();
+                newID--;
+            }
+            function addCard(cardID){
+                newID++;
+                tweet = $('<div class="card-top" id='+newID+'>' + 
+                          '<img height = 150 width = 150 src = "https://1000logos.net/wp-content/uploads/2017/06/Twitter-Logo.png">' +
+                          '<h5>Tweet</h5>' +
+                          '<p>That\'s it, that\'s the tweet.</p>'+
+                          '<button type="button" class="btn btn-danger btn-sm" onclick="deleteCard(\''+newID+'\')">-</button>'+
+                          '</div><br>')
+                tweet.appendTo('#'+cardID)
+            }
+        </script>
     </html>
