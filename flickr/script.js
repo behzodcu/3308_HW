@@ -11,6 +11,8 @@ window.addEventListener('scroll', () =>{
 })
 $("form").submit(function(event){
     results.innerHTML = ''
+    page = 1
+    photoID = 0
     makeApiCall()
     event.preventDefault()
 })
